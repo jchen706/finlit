@@ -20,8 +20,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script>
 
-    <script src="login.js"></script>
-    <link rel="stylesheet" href="login.css">
+    <script src="register.js"></script>
+    <link rel="stylesheet" href="register.css">
 
     <!-- firebase -->
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
@@ -40,18 +40,22 @@
     </header>
 
 
-    <div class="form-login  d-flex justify-content-center">
-        <input id="txtEmail" type="txtEmail" name="email" placeholder="Email">
-        <input id="txtPassword" type="txtPassword" name="password" placeholder="Password">
-        <button id="btnLogin" class="btn btn-action">Login</button>
-        <a href="register.html"><button id="btnSignUp" class="btn btn-action">Sign Up</button></a>
-        <a href="index.html"><button id="btnCancel" class="btn btn-action">Cancel</button></a>
-    </div>
 
-    <div class="invalid">
-        <p>
-            <i id="invalid1"></i>
-        </p>
+    <div class="container  d-flex justify-content-center">
+
+        <div class="row d-flex justify-content-center">
+            <h4>Welcome!</h4>
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+            </br>
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+            <div class="wrapper">
+                <span class="group-btn">
+                    <a href="#" class="btn btn-primary btn-md">register<i class="fa fa-sign-in"></i></a>
+                    <a href="index.html" class="btn btn-primary btn-md">cancel <i class="fa fa-sign-in"></i></a>
+                </span>
+            </div>
+        </div>
     </div>
 
 
@@ -70,26 +74,22 @@
 
         const txtEmail = document.getElementById('txtEmail');
         const txtPassword = document.getElementById('txtPassword');
-        const btnLogin = document.getElementById('btnLogin');
         const btnSignUp = document.getElementById('btnSignUp');
         const btnCancel = document.getElementById('btnCancel');
 
 
-        btnLogin.addEventListener('click', e => {
+        btnSignUp.addEventListener('click', e => {
             const email = txtEmail.value;
             const password = txtPassword.value;
             const auth = firebase.auth();
 
-            const promise = auth.signInWithEmailAndPassword(email, password);
-            promise.catch(e => document.getElementById('invalid1').innerHTML = "Invalid Sign In. Try Again!");
+            const promise = auth.createUserWithEmailAndPassword(email, password);
+            promise.catch(e => console.log(e.message));
 
-            if (firebase.auth.currentUser != null) {
-                location.href = main.html;
-            }
+
 
         });
     </script>
 </body>
-
 
 </html>

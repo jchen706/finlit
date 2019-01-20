@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Group">
+
+    <title>Finlit</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body onload="onload()">
+
+    <a href="index.html"><button id="logout" class="btn btn-action bg-primary">LogOut</button></a>
+    <h4>Funds: 1,000.00</h4>
+
+
+
+
+
+    <div class="container mt-5">
+        <h7>Capital letter before the underscore represents the ticker symbol for the stock. The words after the underscore represents the company's name. For example, AAPL is Apple Inc.'s ticker symbol. </h7>
+        <!-- Search form -->
+
+        <div class="mt-4">
+            <input onkeyup="loadList(this)" id="mysearch" class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+            <ul class="no-bullets" style="list-style-type:none">
+                <li class="no-bullets"><a id="ide0" href=""></a></li>
+                <li class="no-bullets"><a id="ide1" href=""></a></li>
+                <li class="no-bullets"><a id="ide2" href=""></a></li>
+                <li class="no-bullets"><a id="ide3" href=""></a></li>
+                <li class="no-bullets"><a id="ide4" href=""></a></li>
+                <li class="no-bullets"><a id="ide5" href=""></a></li>
+                <li class="no-bullets"><a id="ide6" href=""></a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="container headlines">
+
+        <div class="tips">
+            <h3>Tip!</h3>
+
+            <p>
+                What might make stocks go up or down?
+                There is never a 100% guarantee of how the stock market will react to a news, but there are catalysts that almost always signal the direction of a certain stock. A good earnings report by the company will give investors a good
+                impression of the company and increase their expectations, leading to higher prices. On the other hand, an earnings report that does not meet investor’s hopes will drop in price. Another catalyst is the development and release of new
+                products. Similar to an earnings report, the expectations of the product will influence prices.
+
+            </p>
+
+        </div>
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Learn About Stock Options
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Stock Options</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Options are a different way to invest in stocks. Instead of buying and selling the stocks, you trade the right to buy and sell stocks at a certain price. You buy a call option if you believe that the price of the stock
+                            will go up. Having a call option will give you the right to buy the stock at a certain price. If you think that the stock price will go down, you can buy a put option, which will give you the right to sell the stock at a
+                            certain price. Unlike stocks, options must be bought in 100 increments. Buying one call option gives you the right to buy 100 stocks at the strike price. Also, options have an expiration date, which is the time the
+                            options must be used by or they become worthless. Options are more risky, which means that you can either earn or lose money very quickly.
+
+
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h1>
+            CURRENT TOP HEADLINES
+        </h1>
+
+
+
+
+
+
+
+        <div class="list-group">
+
+            <a id="aa0" href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb0'></h5>
+
+                    <small id='isa0'></small>
+                </div>
+
+                <p class="mb-1" id="ic0"></small>
+
+                    <small class="text-muted" id='ife0'></small>
+
+
+            </a>
+
+            <a id="aa1" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb1'></h5>
+
+                    <small class="text-muted" id='isa1'></small>
+                </div>
+                <p class="mb-1" id='ic1'></p>
+
+                <small class="text-muted" id='ife1'></small>
+            </a>
+
+            <a id="aa2" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb2'></h5>
+
+                    <small id='isa2'></small>
+                </div>
+
+                <p class="mb-1" id="ic2"></small>
+
+                    <small class="text-muted" id='ife2'></small>
+
+
+            </a>
+
+            <a id="aa3" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb3'></h5>
+
+                    <small class="text-muted" id='isa3'></small>
+                </div>
+                <p class="mb-1" id='ic3'></p>
+
+                <small class="text-muted" id='ife3'></small>
+            </a>
+
+            <a id="aa4" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb4'></h5>
+
+                    <small id='isa4'></small>
+                </div>
+
+                <p class="mb-1" id="ic4"></small>
+
+                    <small class="text-muted" id='ife4'></small>
+
+
+            </a>
+
+            <a id="aa5" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb5'></h5>
+
+                    <small class="text-muted" id='isa5'></small>
+                </div>
+                <p class="mb-1" id='ic5'></p>
+
+                <small class="text-muted" id='ife5'></small>
+            </a>
+
+            <a id="aa6" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb6'></h5>
+
+                    <small id='isa6'></small>
+                </div>
+
+                <p class="mb-1" id="ic6"></small>
+
+                    <small class="text-muted" id='ife6'></small>
+
+
+            </a>
+
+            <a id="aa7" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb7'></h5>
+
+                    <small class="text-muted" id='isa7'></small>
+                </div>
+                <p class="mb-1" id='ic7'></p>
+
+                <small class="text-muted" id='ife7'></small>
+            </a>
+
+
+            <a id="aa8" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb8'></h5>
+
+                    <small id='isa8'></small>
+                </div>
+
+                <p class="mb-1" id="ic8"></small>
+
+                    <small class="text-muted" id='ife8'></small>
+
+
+            </a>
+
+            <a id="aa9" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb9'></h5>
+
+                    <small class="text-muted" id='isa9'></small>
+                </div>
+                <p class="mb-1" id='ic9'></p>
+
+                <small class="text-muted" id='ife9'></small>
+            </a>
+
+            <a id="aa10" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb10'></h5>
+
+                    <small id='isa10'></small>
+                </div>
+
+                <p class="mb-1" id="ic10"></small>
+
+                    <small class="text-muted" id='ife10'></small>
+
+
+            </a>
+
+            <a id="aa11" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb11'></h5>
+
+                    <small class="text-muted" id='isa11'></small>
+                </div>
+                <p class="mb-1" id='ic11'></p>
+
+                <small class="text-muted" id='ife11'></small>
+            </a>
+
+            <a id="aa12" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb12'></h5>
+
+                    <small id='isa12'></small>
+                </div>
+
+                <p class="mb-1" id="ic12"></small>
+
+                    <small class="text-muted" id='ife12'></small>
+
+
+            </a>
+
+            <a id="aa13" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb13'></h5>
+
+                    <small class="text-muted" id='isa13'></small>
+                </div>
+                <p class="mb-1" id='ic13'></p>
+
+                <small class="text-muted" id='ife13'></small>
+            </a>
+
+            <a id="aa14" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb14'></h5>
+
+                    <small id='isa14'></small>
+                </div>
+
+                <p class="mb-1" id="ic14"></small>
+
+                    <small class="text-muted" id='ife14'></small>
+
+
+            </a>
+
+            <a id="aa15" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb15'></h5>
+
+                    <small class="text-muted" id='isa15'></small>
+                </div>
+                <p class="mb-1" id='ic15'></p>
+
+                <small class="text-muted" id='ife15'></small>
+            </a>
+
+            <a id="aa16" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb16'></h5>
+
+                    <small id='isa16'></small>
+                </div>
+
+                <p class="mb-1" id="ic16"></small>
+
+                    <small class="text-muted" id='ife16'></small>
+
+
+            </a>
+
+            <a id="aa17" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb17'></h5>
+
+                    <small class="text-muted" id='isa17'></small>
+                </div>
+                <p class="mb-1" id='ic17'></p>
+
+                <small class="text-muted" id='ife17'></small>
+            </a>
+
+            <a id="aa18" href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb18'></h5>
+
+                    <small id='isa18'></small>
+                </div>
+
+
+                <p class="mb-1" id="ic18"></small>
+
+                    <small class="text-muted" id='ife18'></small>
+
+
+            </a>
+
+            <a id="aa19" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+
+                <div class="d-flex w-100 justify-content-between">
+
+                    <h5 class="mb-1" id='isb19'></h5>
+
+                    <small class="text-muted" id='isa19'></small>
+
+                </div>
+                <p class="mb-1" id='ic19'></p>
+
+                <small class="text-muted" id='ife19'></small>
+            </a>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>

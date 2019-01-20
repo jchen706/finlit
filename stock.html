@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<head>
+
+
+
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <header class="page-header" style="text-align: center;">
+        <h1 class="display-4" id=name></h1>
+        <p><i id='company name'></i>
+            <p>
+                <h7>Tips!</h7>
+                <p><i>
+                        Beware of absurd pumps and dumps. Besure to research before you invest. Savings is not only about the short term, but the long term. Start Investing Now!</i>
+                </p>
+    </header>
+    <div class="buttons12 d-flex justify-content-center" style="text-align:center;">
+        <a href="main.html"><button type="button" class="btn btn-secondary" data-dismiss="modal">Main Page</button></a>
+        <!-- Button trigger modal -->
+        <button type="button" onclick="getit()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Buy Shares!
+        </button>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        Number of Shares: <input type="text" name="FirstName" value=""><br>
+                        Price: <input type="text" name="LastName" value=""><br>
+                        <input type="submit" value="Submit">
+                        <p id='Total'>
+                        </p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h3>Your Shares</h3>
+        <ul class="list-group">
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+        </ul>
+
+        <div class="row ">
+            <div class="col-md-3 d-flext justify-content-center">
+                <h3 style="text-align:center;">Latest Prices</h3>
+                <ul style="list-style-type:none">
+                    <li class="list-group-item list-group-item-info" id="ji0">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji1">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji2">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji3">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji4">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji5">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji6">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji7">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji8">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji9">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji10">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji11">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji12">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji13">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji14">1</li>
+                    <li class="list-group-item list-group-item-info" id="ji15">1</li>
+            </div>
+
+            <div class="col-md-7">
+
+                <h1>HEADLINES</h1>
+                <div class="list-group">
+                    <a id="bb0" href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head0">List group item heading</h5>
+                            <small id="time0">3 days ago</small>
+                        </div>
+                        <p class="mb-1" id="descrip0">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small id="author0">Donec id elit non mi porta.</small>
+                    </a>
+                    <a id="bb1" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head1">List group item heading</h5>
+                            <small class="text-muted" id="time1">3 days ago</small>
+                        </div>
+                        <p class="mb-1" id="descrip1">
+
+                        </p>
+                        <small class="text-muted" id="author1">Donec id elit non mi porta.</small>
+                    </a>
+                    <a id="bb2" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head2">List group item heading</h5>
+                            <small class="text-muted" id='time2'>days ago</small>
+                        </div>
+                        <p class="mb-1" id='descrip2'>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted" id="author2">Donec id elit non mi porta.</small>
+                    </a>
+                    <a id="bb3" href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head3">List group item heading</h5>
+                            <small id="time3">3 days ago</small>
+                        </div>
+                        <p class="mb-1" id="descrip3">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small id="author3">Donec id elit non mi porta.</small>
+                    </a>
+                    <a id="bb4" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head4">List group item heading</h5>
+                            <small class="text-muted" id="time4">3 days ago</small>
+                        </div>
+                        <p class="mb-1" id="descrip4">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted" id="author4">Donec id elit non mi porta.</small>
+                    </a>
+                    <a id="bb5" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" id="head5">List group item heading</h5>
+                            <small class="text-muted" id="time5">3 days ago</small>
+                        </div>
+                        <p class="mb-1" id="descrip5">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted" id="author5">Donec id elit non mi porta.</small>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        </ul>
+    </div>
+
+
+
+
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+    <div id="myDiv">
+        <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+
+    <script language="JavaScript">
+        var parameters = location.search.substring(1).split("&");
+        console.log(parameters);
+        var temp = parameters[0].split("=");
+
+        title = unescape(temp[1]);
+        console.log(title);
+        temp = parameters[1].split("=");
+
+        startdate = unescape(temp[1]);
+        console.log(startdate);
+
+        document.getElementById('name').innerHTML = startdate;
+        document.getElementById('company name').innerHTML = title;
+
+        var theurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + title + '&interval=5min&apikey=TNXCISCHVJ6QO0Q8';
+
+
+
+        doAjax(
+            theurl
+        );
+
+        var data1 = [];
+        var date2 = [];
+        var day;
+
+        function formatDate(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+
+
+        var price123;
+
+        function doAjax(url) {
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                contentType: "application/json",
+                success: function(data) {
+
+
+                    var i = 2;
+                    var num1 = 0;
+                    while (i < 30) {
+
+
+
+
+                        var d = new Date();
+                        d.setDate(d.getDate() - i);
+
+                        var day = formatDate(d) + "";
+                        //console.log(day);
+
+
+                        var symbol2 = data['Time Series (Daily)'][day];
+                        //console.log(symbol2);
+
+                        if (symbol2 !== undefined) {
+
+                            var a = JSON.stringify(symbol2);
+                            var b = a.split(',')[3].split(':')[1];
+                            console.log(b);
+
+                            var c = typeof b;
+                            console.log(c);
+                            var d = parseFloat(b);
+                            console.log(typeof d);
+                            console.log(b);
+                            date2.unshift(i);
+                            data1.unshift(day);
+                            //console.log(data1);
+                            d.toFixed(2);
+
+
+                            var element = document.getElementById('ji' + num1);
+                            console.log(element);
+                            if (element !== null) {
+                                element.innerHTML = day + ' : $' + b.slice(1, 6);
+                                num1++;
+                            }
+                        }
+                        if (num1 == 0) {
+                            price123 = b.slice(1, 6);
+                        }
+
+                        if (b == 16) {
+                            break;
+                        }
+
+                        //console.log(symbol2);
+                        //if (typeof a === undefined) {
+                        //    console.log(a.substr(1, 5));
+                        //}
+                        //var list = a.substr(1, 5);
+
+                        //console.log(date2);
+
+
+                        i++;
+                    }
+
+                }
+            });
+
+        }
+
+        headload();
+
+
+
+
+
+        function headload() {
+
+
+            var theurl = 'https://newsapi.org/v2/everything?q=' + title + '&apiKey=fe384a6da3354f499e8ea102bc38614c';
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    callheading(xhttp.responseText);
+                }
+            };
+            xhttp.open("GET", theurl, true);
+            xhttp.send();
+
+
+
+
+
+
+        }
+
+
+        function callheading(response) {
+            var root = JSON.parse(response);
+            //console.log(root);
+            var arrayofArticles = root.articles;
+            console.log(arrayofArticles);
+            //console.log(arrayofArticles);
+
+            for (i = 0; i < 7; i++) {
+
+                var titleElement = document.getElementById('head' + i);
+                var timeElement = document.getElementById('time' + i);
+                var descripElement = document.getElementById('descrip' + i);
+                var authorElement = document.getElementById('author' + i);
+                var urlElement = document.getElementById('bb' + i);
+
+
+                var title = arrayofArticles[i].title;
+                if (title !== null) {
+                    titleElement.innerHTML = title + '';
+                }
+
+
+                if (arrayofArticles[i].author !== null) {
+                    var author = arrayofArticles[i].author;
+                    authorElement.innerHTML = author + '';
+                    console.log(author);
+                }
+
+                var url = arrayofArticles[i].url;
+                urlElement.href = url;
+                var description = arrayofArticles[i].description;
+                descripElement.innerHTML = description;
+                var time = JSON.stringify(arrayofArticles[i].publishedAt);
+                if (time !== undefined) {
+                    timeElement.innerHTML = time.slice(1, 11);
+
+                }
+
+            }
+        }
+
+        function getit() {
+
+
+        }
+
+        //
+        // var data = [{
+        //     x: ['2018-12-21', '2018-12-24', '2018-12-26', '2018-12-27', '2018-12-28', '2018-12-31', '2019-01-02', '2019-01-03', '2019-01-04', '2019-01-07', '2019-01-08', '2019-01-09', '2019-01-10', '2019-01-11', '2019-01-14', '2019-01-15',
+        //         '2019-01-16',
+        //         '2019-01-17'
+        //     ],
+        //     y: data1,
+        //     type: 'scatter'
+        // }];
+        //
+        // Plotly.newPlot('myDiv', data, {}, {
+        //     showSendToCloud: true
+        // });
+        //
+        // // Themes begin
+        // am4core.useTheme(am4themes_animated);
+        // // Themes end
+        //
+        // var chart = am4core.create("chartdiv", am4charts.XYChart);
+        //
+        // var data = [];
+        // var ii = 0;
+        //
+        // function show(date, value) {
+        //     //console.log(date);
+        //     //console.log(value);
+        //     data.push({
+        //         date: '2019-01-19',
+        //         value: 35,
+        //     });
+        //
+        // }
+        //
+        // chart.data = data;
+        //
+        // // Create axes
+        // var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        // dateAxis.renderer.minGridDistance = 60;
+        //
+        // var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        //
+        // // Create series
+        // var series = chart.series.push(new am4charts.LineSeries());
+        // series.dataFields.valueY = "value";
+        // series.dataFields.dateX = "date";
+        // series.tooltipText = "{value}"
+        //
+        // series.tooltip.pointerOrientation = "vertical";
+        //
+        // chart.cursor = new am4charts.XYCursor();
+        // chart.cursor.snapToSeries = series;
+        // chart.cursor.xAxis = dateAxis;
+        //
+        // //chart.scrollbarY = new am4core.Scrollbar();
+        // chart.scrollbarX = new am4core.Scrollbar();
+    </script>
+
+    <!-- HTML -->
+
+</body>
+
+
+
+
+</html>

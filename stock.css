@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.list-group-item {
+    width: fit-content;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.buttons12 {
+    text-align: center !important;
+    align-items: center;
+}

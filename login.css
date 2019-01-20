@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    overflow-x: hidden;
+    background: #337ab7;
+    color: white;
+}
+
+.wrapper {
+    max-width: 170px;
+    max-height: 170px;
+}
+
+a :hover {
+    background-color: white !important;
+}
+
+#btnLogin : hover {
+    background: white !important;
+}
+
+.form-login {
+    margin-top: 15px;
+}
